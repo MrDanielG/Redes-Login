@@ -1,0 +1,36 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: 'img form';
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+}
+
+.formulario {
+  grid-area: form;
+  font-weight: bold;
+}
+
+.imgLogin {
+  grid-area: img;
+  background-image: url('../img/bg3.jpg');
+  background-size: cover;
+}
+
+.btnIngresar {
+  background: rgb(2, 42, 83);
+  background: linear-gradient(
+    0deg,
+    rgba(2, 42, 83, 1) 0%,
+    rgba(1, 74, 149, 1) 100%
+  );
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
