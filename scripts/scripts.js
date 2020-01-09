@@ -6,6 +6,7 @@ function get(url, accion) {
   xmlHttp.open('GET', url, true);
   xmlHttp.send();
 }
+
 var elemento = id => document.getElementById(id);
 
 function verificar() {
