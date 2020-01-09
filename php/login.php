@@ -7,8 +7,6 @@ $query = "SELECT * FROM usuario WHERE id_usuario = '$nombreUsuario' and contra =
 $resultado = $conexion->query($query);
 if ($resultado->num_rows <= 0) {
     header('Location: '. '../index.html');
-    
 } else {
-    //echo 'Usuario encontrado en la Base de Datos';
     header('Location: '. '../resources/intro.html');
 }

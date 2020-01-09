@@ -38,6 +38,17 @@
 
 .btnIngresar:hover {
   background: #2bb3d6;
+  cursor: pointer;
+}
+
+.resultado a {
+  text-decoration: none;
+  font-size: small;
+  color: gray;
+}
+
+.resultado a:hover {
+  color: black;
 }
 
 input {
@@ -53,4 +64,8 @@ input {
 h1 {
   color: #2bb3d6;
   margin: 10px;
+}
+
+a {
+  text-decoration: none;
 }

@@ -13,14 +13,17 @@
       <div class="imgLogin"></div>
       <div class="formulario">
         <h1>Inicia Sesion</h1>
-        <form action="../php/login.php" method="get">
+        <form action="../php/login.php" method="GET">
           <input
             type="text"
             name="usernameInp"
             id="usernameInp"
             placeholder="Nombre de Usuario"
+            oninput="verificar()"
           />
           <br />
+          <div id="verificaUsr"></div>
+
           <input
             type="password"
             name="passwordInp"
@@ -29,16 +32,11 @@
           />
           <br />
 
-          <button
-            type="submit"
-            class="btnIngresar"
-            id="btnLogin"
-            onclick="verificar()"
-          >
+          <button type="submit" class="btnIngresar" id="btnLogin">
             Ingresar
           </button>
         </form>
-        <div class="resultado"></div>
+        <div class="resultado"><a href="registro.html">Registrarse</a></div>
       </div>
     </div>
   </body>
