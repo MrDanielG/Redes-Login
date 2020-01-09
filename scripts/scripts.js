@@ -1,14 +1,17 @@
 let xmlHttp = null;
 
-function verificar() {
-  let nombreUsr = document.getElementById('usernameInp').value;
+function get(url, accion) {
   xmlHttp = crearXMLHttpRequest();
-  xmlHttp.onreadystatechange = cargar;
-  xmlHttp.open('GET', '../php/verificaUsuario.php?nombre=' + nombreUsr, true);
+  xmlHttp.onreadystatechange = accion;
+  xmlHttp.open('GET', url, true);
   xmlHttp.send();
 }
+var elemento = id => document.getElementById(id);
 
-function login() {}
+function verificar() {
+  let nombreUsr = elemento('usernameInp').value;
+  get('../php/verificaUsuario.php?nombre=' + nombreUsr, cargar);
+}
 
 function crearXMLHttpRequest() {
   var xmlHttp = null;
@@ -18,7 +21,7 @@ function crearXMLHttpRequest() {
 }
 
 function cargar() {
-  let respuestaUsr = document.getElementById('verificaUsr');
+  let respuestaUsr = elemento('verificaUsr');
 
   if (xmlHttp.readyState == 4) {
     respuestaUsr.innerHTML = xmlHttp.responseText;
