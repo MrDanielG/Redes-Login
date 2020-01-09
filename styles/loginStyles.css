@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 * {
   padding: 0;
   margin: 0;
@@ -14,6 +15,8 @@
 .formulario {
   grid-area: form;
   font-weight: bold;
+  margin: auto;
+  text-align: center;
 }
 
 .imgLogin {
@@ -23,14 +26,31 @@
 }
 
 .btnIngresar {
-  background: rgb(2, 42, 83);
-  background: linear-gradient(
-    0deg,
-    rgba(2, 42, 83, 1) 0%,
-    rgba(1, 74, 149, 1) 100%
-  );
+  background: #014a95;
   color: white;
-  padding: 10px;
-  border-radius: 10px;
+  border-radius: 40px;
   border: none;
+  font-size: medium;
+  margin: 20px;
+  padding: 7px;
+  width: 200px;
+}
+
+.btnIngresar:hover {
+  background: #2bb3d6;
+}
+
+input {
+  border-radius: 40px;
+  border: 2px solid #2bb3d6;
+  font-size: medium;
+  text-align: center;
+  margin: 20px;
+  padding: 7px;
+  width: 300px;
+}
+
+h1 {
+  color: #2bb3d6;
+  margin: 10px;
 }
