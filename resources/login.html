@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="../styles/loginStyles.css" />
+    <script src="../scripts/scripts.js"></script>
     <title>Login Redes</title>
   </head>
   <body>
@@ -12,7 +13,7 @@
       <div class="imgLogin"></div>
       <div class="formulario">
         <h1>Inicia Sesion</h1>
-        <form action="login.php" method="get">
+        <form action="../php/login.php" method="get">
           <input
             type="text"
             name="usernameInp"
@@ -28,8 +29,16 @@
           />
           <br />
 
-          <button type="submit" class="btnIngresar">Ingresar</button>
+          <button
+            type="submit"
+            class="btnIngresar"
+            id="btnLogin"
+            onclick="verificar()"
+          >
+            Ingresar
+          </button>
         </form>
+        <div class="resultado"></div>
       </div>
     </div>
   </body>
