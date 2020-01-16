@@ -25,7 +25,7 @@
   background-size: cover;
 }
 
-.btnIngresar {
+.btnRegistro {
   background: #014a95;
   color: white;
   border-radius: 40px;
@@ -36,9 +36,14 @@
   width: 200px;
 }
 
-.btnIngresar:hover {
+.btnRegistro:hover {
   background: #2bb3d6;
   cursor: pointer;
+}
+
+.btnRegistro:disabled {
+  background: #919596;
+  cursor: not-allowed;
 }
 
 .resultado a {

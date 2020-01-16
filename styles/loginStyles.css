@@ -41,6 +41,11 @@
   cursor: pointer;
 }
 
+.btnIngresar:disabled {
+  background: #919596;
+  cursor: not-allowed;
+}
+
 .resultado a {
   text-decoration: none;
   font-size: small;

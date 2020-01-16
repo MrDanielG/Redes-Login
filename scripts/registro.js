@@ -1,15 +1,14 @@
 let xmlHttp = null;
 
 var elemento = id => document.getElementById(id);
-
 window.onload = function() {
-  let contra = elemento('passwordInp').value;
-  let usr = elemento('usernameInp').value;
+  let contra = elemento('newPassword').value;
+  let usr = elemento('newUsername').value;
 
   if (contra == '' || usr == '') {
-    elemento('btnIngresar').disabled = true;
+    elemento('btnRegistro').disabled = true;
   } else {
-    elemento('btnIngresar').disabled = false;
+    elemento('btnRegistro').disabled = false;
   }
 };
 
@@ -19,9 +18,8 @@ function get(url, accion) {
   xmlHttp.open('GET', url, true);
   xmlHttp.send();
 }
-
 function verificar() {
-  let nombreUsr = elemento('usernameInp').value;
+  let nombreUsr = elemento('newUsername').value;
   get('../php/verificaUsuario.php?nombre=' + nombreUsr, cargar);
 }
 
@@ -37,21 +35,10 @@ function cargar() {
 
   if (xmlHttp.readyState == 4) {
     respuestaUsr.innerHTML = xmlHttp.responseText;
-    if (respuestaUsr.innerHTML == 'Usuario Inexistente') {
-      elemento('btnIngresar').disabled = true;
+    if (respuestaUsr.innerHTML == 'Usuario Existente') {
+      elemento('btnRegistro').disabled = true;
     } else {
-      elemento('btnIngresar').disabled = false;
+      elemento('btnRegistro').disabled = false;
     }
-  }
-}
-
-function verificarInp() {
-  let contra = elemento('passwordInp').value;
-  let usr = elemento('usernameInp').value;
-
-  if (contra == '' || usr == '') {
-    elemento('btnIngresar').disabled = true;
-  } else {
-    elemento('btnIngresar').disabled = false;
   }
 }
