@@ -1,12 +1,19 @@
 <?php
 include "conexion.php";
+
 $nombreUsuario = $_GET["usernameInp"];
 $contra = $_GET["passwordInp"];
-$query = "SELECT * FROM usuario WHERE id_usuario = '$nombreUsuario' and contra = '$contra'"; 
 
-$resultado = $conexion->query($query);
-if ($resultado->num_rows <= 0) {
-    header('Location: '. '../index.html');
+$queryUsername = "SELECT id_usuario FROM usuario WHERE id_usuario = '$nombreUsuario'"; 
+$queryPassword = "SELECT contra FROM usuario WHERE id_usuario = '$nombreUsuario'";
+
+$resultUsername = $conexion->query($queryUsername);
+$resultPassword = $conexion->query($queryPassword);
+
+if ($resultUsername == $nombreUsuario) {
+    if(password_verify($contra, $resultPassword)){
+        header('Location: '. '../index.html');
+    }
 } else {
     header('Location: '. '../resources/intro.html');
 }
