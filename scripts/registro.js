@@ -42,3 +42,17 @@ function cargar() {
     }
   }
 }
+
+function validate() {
+  let usr = elemento('newUsername').value;
+  let contra = elemento('newPassword').value;
+  let contraVerif = elemento('newPasswordValidate').value;
+
+  // if (usr.value == '' || contra.value == '' || contraVerif == '') {
+  //   alert('Por favor llenar todos lso campos');
+  // } else if (contra.value != contraVerif.value) {
+  //   alert('Las Contraseñas No Conciden');
+  // } else {
+  //   //Enviar a PHP
+  // }
+}
