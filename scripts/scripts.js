@@ -6,6 +6,9 @@ window.onload = function() {
   let contra = elemento('passwordInp').value;
   let usr = elemento('usernameInp').value;
 
+  contra.value == '';
+  usr.value == '';
+
   if (contra == '' || usr == '') {
     elemento('btnIngresar').disabled = true;
   } else {
@@ -34,12 +37,16 @@ function crearXMLHttpRequest() {
 
 function cargar() {
   let respuestaUsr = elemento('verificaUsr');
+  let contra = elemento('passwordInp').value;
 
   if (xmlHttp.readyState == 4) {
     respuestaUsr.innerHTML = xmlHttp.responseText;
     if (respuestaUsr.innerHTML == 'Usuario Inexistente') {
       elemento('btnIngresar').disabled = true;
-    } else {
+    } else if (
+      respuestaUsr.innerHTML == 'Usuario Existente' &&
+      contra.value != ''
+    ) {
       elemento('btnIngresar').disabled = false;
     }
   }
