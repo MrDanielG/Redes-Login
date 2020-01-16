@@ -12,7 +12,7 @@ $resultPassword = $conexion->query($queryPassword);
 
 if ($resultUsername == $nombreUsuario) {
     if(password_verify($contra, $resultPassword)){
-        header('Location: '. '../index.html');
+        header('Location: '. '../resources/intro.php');
     }
 } else {
     header('Location: '. '../resources/intro.html');
